@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import cartpic from "../Dashboard/Cart_Pic.png"
 import "../Dashboard/Dashboard.scss"
 import Signup from '../Signup/Signup';
+import Login from '../Login/Login';
 import {
     BrowserRouter,
     Switch,
@@ -21,15 +22,17 @@ export class Dashboard extends Component {
                 </div>
                 <div className="user_content">
                     <div className="heading">
+                    <Link style={{textDecoration:"none",color:"black"}} to={'/'} >
                         <span className="head">LOGIN </span>
-                        <Link style={{textDecoration:"none",color:"black"}} to={`/Dashboard/SignUp`} >
+                        </Link>
+                        <Link style={{textDecoration:"none",color:"black"}} to={'/DashSignup'} >
                         <span className="head">SIGNUP </span>
                         </Link>
                     </div>
                     <div className="box">
                     <Switch>
-                           
-                            <Route exact path="/Dashboard/SignUp" component={Signup} />
+                            <Route exact path="/" component={Login} />
+                            <Route exact path="/DashSignup" component={Signup} />      
                         </Switch>
             
                     </div>
