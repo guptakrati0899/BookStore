@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import '../Signup/Signup.scss'
+import UserService from '../../services/user_services';
+import { Snackbar, IconButton } from '@mui/material';
+
+const obj = new UserService();
 
 
 
@@ -19,10 +23,16 @@ class Signup extends Component {
             emailError: false,
             passError: false,
             mobileError: false,
+            snackbaropen: false, 
+            snackbarmsg: "",
 
        
         }
     }
+
+    snackbarClose = (event) => {
+        this.setState({snackbaropen: false});
+    };
 
 
     isValidated = () => {
@@ -44,7 +54,27 @@ class Signup extends Component {
         var isValid = this.isValidated();
         if(!isValid) {
             console.log("Validation Sucessfull!");
+        
+
+        let signupObj = {
+            "fullName": this.state.name,
+            "email": this.state.email,
+            "password": this.state.password,
+            "phone": this.state.mobileno,
         }
+        console.log(signupObj);
+        obj.signup(signupObj).then((response)=> {
+            console.log(response);
+            localStorage.setItem("token", response.data.id);
+            this.setState({snackbaropen:true, snackbarmsg: "Registered Successfully!"})
+        }).catch((error)=>{
+            console.log(error);
+            this.setState({snackbaropen:true, snackbarmsg: "Registration Failed!"})
+        })
+    }  else {
+        this.setState({snackbaropen:true, snackbarmsg: "Please enter data!"})
+    }
+
     }
 
     change = (e) => {
@@ -61,6 +91,19 @@ class Signup extends Component {
      
         return (
             <div>
+                 <Snackbar
+                    anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+                    open={this.state.snackbaropen}
+                    autoHideDuration={3000}
+                    onClose={this.snackbarClose}
+
+                    message={<span id="message_id">{this.state.snackbarmsg}</span>}
+                    action={[
+                        <IconButton key="close" aria-label="Close" color="inherit" onClick={this.snackbarClose}>
+                            X
+                        </IconButton>
+                    ]}
+                />
                 <div className="login-frame">
                     <form className="login-form">
                         <div className="reg-input">
