@@ -8,7 +8,8 @@
 
 .login-form{
     @include align(flex,center,column,333px);
-    height: 333p;  
+
+    margin-top: 0.2rem;
 }
 .login-input{
     @include align(flex,space-evenly,column,190px);
@@ -40,3 +41,10 @@
     font-size: 0.8rem;
     color:darkgray;
 }
+
+@media screen and (min-width: 768px) and (max-width: 1024px){
+    .login-form{
+        margin-top: 1rem;
+    }
+}
+

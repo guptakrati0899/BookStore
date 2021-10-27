@@ -36,7 +36,7 @@ $width: 100%;
 }
 .user_content{
     background-color: white;
-    width: 22%;
+    width: 20%;
     height: 52vh;
     border-radius: 10px;
     box-shadow: 0px 0px 22px 1px #88888a;
@@ -60,4 +60,40 @@ $width: 100%;
 }
 .head:hover ,.btn:focus{
     color: black;
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1024px){
+
+    .cart-display{
+        width: 30%;
+        height: 40vh;
+    }
+
+    .user_content{
+        width: 40%;
+    height: 45vh;
+    }
+}
+
+
+@media screen and (min-width: 360px) and (max-width: 630px){
+    .cart-display{
+        display:none;
+    }
+
+    .user_content{
+        width: 88%;
+        height: 58vh;
+    }
+}
+
+@media screen and (max-width: 340px){
+    .cart-display {
+        display: none;
+    }
+    .user_content {
+        width: 90%;
+        height: 86vh;        
+    }
 }
