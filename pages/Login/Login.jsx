@@ -10,10 +10,44 @@ export default class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          
+                
+            email: "",
+            password: "",
+            emailError: false,
+            passError: false,
         }
        
     }
+
+    
+    isValidated = () => {
+        let isError = false;
+        const errors = this.state;
+        errors.emailError = this.state.email !=='' ? false : true;
+        errors.passError = this.state.password !== ''? false : true;
+      
+        this.setState({
+            ...errors
+        })
+
+        return isError =errors.emailError || errors.passError 
+    }
+    
+    next = () => {
+        var isValid = this.isValidated();
+        if(!isValid) {
+            console.log("Validation Sucessfull!");
+        }
+    }
+
+    change = (e) => {
+        console.log(e.target.value);
+        this.setState({
+            [e.target.name] : e.target.value
+        });
+    }
+    
+ 
 
 
 
@@ -28,10 +62,13 @@ export default class Login extends Component {
                            
                                 id="userName"
                                 type="text"
-                                name="uName"
-                                label="User Name"
+                                name="email"
+                                label="Email Id"
                                 variant="outlined"
                                 size="small"
+                                error = {this.state.emailError}
+                                onChange = {e => this.change(e)}
+                                helperText = {this.state.emailError ? "Enter an email" : ''} 
                          
                                
                             />
@@ -43,6 +80,9 @@ export default class Login extends Component {
                                 label="Password"
                                 variant="outlined"
                                 size="small"
+                                error = {this.state.passError}
+                                onChange = { e=> this.change(e)}
+                                helperText={this.state.passError ?"Enter a password" : ''}
                           
                               
                             />
@@ -52,7 +92,7 @@ export default class Login extends Component {
 
                         </div>
                         <div className="div-but-content">
-                            <Button className="button1" variant="contained">
+                            <Button className="button1" variant="contained" onClick = {this.next}>
                                 Login
                             </Button>
                         </div>
