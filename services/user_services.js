@@ -14,6 +14,10 @@ class UserService {
         let response = obj.postMethod(`${baseurl}registration`, data, headerconfig);
         return response;
     }
+    login(data) {
+        let response = obj.postMethod(`${baseurl}login`, data, headerconfig);
+        return response;
+    }
    
 }
 
