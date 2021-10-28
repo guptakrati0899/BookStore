@@ -18,6 +18,11 @@ class UserService {
         let response = obj.postMethod(`${baseurl}login`, data, headerconfig);
         return response;
     }
+    getAllbooks(data){
+        let response = obj.getMethod(`${baseurl}get/book`, headerconfig);
+        return response;
+
+    }
    
 }
 
