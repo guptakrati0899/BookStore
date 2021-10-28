@@ -23,7 +23,7 @@
   }
 
 
-  
+
 
   .displaybook-header2{
     display: flex;
@@ -36,4 +36,54 @@ margin-left: 13rem;
     margin-left:0.6rem;
     font-weight: 600;
     color: lightgray;
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1024px){
+
+    .displaybook-header2{
+        margin-left: 6rem;
+    }
+    .menudiv{
+        margin-left: 16rem;
+        margin-top: 1.3rem;
+        }
+
+    .displaybook-mainContainer{
+        margin-left: 1.2rem;
+    }
+}
+
+
+@media screen and (min-width: 360px) and (max-width: 630px){
+    .displaybook-header2{
+        margin-left: 2.5rem;
+    }
+
+    .menudiv{
+        display:none;
+    }
+    
+    .displaybook-mainContainer{
+        margin-left: -1.5rem;
+    }
+
+}
+
+
+@media screen and (max-width: 340px){
+
+    .displaybook-header2{
+        margin-left: 2.5rem;
+    }
+
+    .menudiv{
+        display:none;
+    }
+    
+    .displaybook-mainContainer{
+        margin-left: -1.5rem;
+    }
+
+
 }

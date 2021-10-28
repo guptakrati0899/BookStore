@@ -99,6 +99,45 @@
        
     }
 
+    @media screen and (min-width: 360px) and (max-width: 630px){
+
+        .MuiCard-root {
+        height: 46vh!important;
+    }
+
+
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1024px){
+
+    .MuiCard-root{
+        height: 37vh !important;
+    }
+}
+
+
+@media screen and (max-width: 340px){
+    .MuiCard-root{
+        width: 16rem!important;
+        height: 63vh!important;
+    }
+
+    .css-1p5q5e5-MuiStack-root{
+        width: 107vw;
+    }
+    
+    .MuiButton-label{
+        font-size: 0.6rem !important;
+    }
+
+    .left > button , .right > button {
+
+
+        width: 6.3rem;
+    }
+}
+
     
 
   
