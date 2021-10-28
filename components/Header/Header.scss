@@ -44,7 +44,7 @@ $color: grey;
 .side-header{
     @include icon(flex,null,space-around);
     width: 200px;
-    margin-left: 190px;
+    margin-left: 240px;
 }
 .cart_main{
     @include icon(flex,row,null);
@@ -64,4 +64,8 @@ $color: grey;
 .MuiInputBase-input{
     padding: 9px 10px 7px !important;
     padding-top : 20px;
+}
+
+.MuiToolbar-root {
+    margin-left: 3rem !important;
 }
