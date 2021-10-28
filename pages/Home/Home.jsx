@@ -19,27 +19,9 @@ export class Home extends Component {
 
         this.state = {
              bookarr: [],
-             anchorEl : null,
+           
         }
     }
-
-    open=() =>{
-        Boolean(this.state.anchorEl)
-    }
-
-    handleClose = () => {
-        this.setState({
-            anchorEl : null
-        })
-      };
-
-     handleClick = (event) => {
-        this.setState({
-            anchorEl: event.currentTarget,
-
-        })
-    };
-      
 
 
 
