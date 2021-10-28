@@ -22,17 +22,17 @@ export class Dashboard extends Component {
                 </div>
                 <div className="user_content">
                     <div className="heading">
-                    <Link style={{textDecoration:"none",color:"black"}} to={'/'} >
+                    <Link style={{textDecoration:"none",color:"black", }} to={'/'} >
                         <span className="head">LOGIN </span>
                         </Link>
-                        <Link style={{textDecoration:"none",color:"black"}} to={'/DashSignup'} >
+                        <Link style={{textDecoration:"none",color:"black"}} to={'/Signup'} >
                         <span className="head">SIGNUP </span>
                         </Link>
                     </div>
                     <div className="box">
                     <Switch>
                             <Route exact path="/" component={Login} />
-                            <Route exact path="/DashSignup" component={Signup} />      
+                            <Route exact path="/Signup" component={Signup} />      
                         </Switch>
             
                     </div>
