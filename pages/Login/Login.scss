@@ -9,7 +9,7 @@
 .login-form{
     @include align(flex,center,column,333px);
 
-    margin-top: 0.2rem;
+    margin-top: 1.5rem;
 }
 .login-input{
     @include align(flex,space-evenly,column,190px);
@@ -45,6 +45,18 @@
 @media screen and (min-width: 768px) and (max-width: 1024px){
     .login-form{
         margin-top: 1rem;
+    }
+}
+
+@media screen and (max-width: 340px){
+    .login-form{
+        margin-top: 2rem;
+    }
+}
+
+@media screen and (min-width: 360px) and (max-width: 630px){
+    .login-form{
+        margin-top: 2rem;
     }
 }
 
