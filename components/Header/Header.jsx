@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../Header/Header.scss';
-import headpic from '../Header/education.png';
+import headpic from '../../Assets/education.png';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import SearchIcon from '@mui/icons-material/Search';

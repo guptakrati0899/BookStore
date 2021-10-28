@@ -54,7 +54,7 @@
 
   }
   .book-buttons{
-    margin-top: 1rem;
+    margin-top: 2rem;
     display: flex;
     width: 14rem;
     height: 2rem;
@@ -62,11 +62,23 @@
   }
 
 
-    .but-2 > button{
-        width: 5rem;
+    .left > button{
+        width: 7.3rem;
         color:white !important;
         background-color: #A03037 !important;
+        margin-right:0.8rem;
 
+    }
+    .right > button{
+        width: 7.3rem;
+        color: black !important;
+        background-color: white !important;
+        margin-right:1rem;
+
+    }
+
+    .MuiButton-label{
+        font-size:0.8rem !important;
     }
     .displaybook-header2{
         display: flex;
@@ -82,8 +94,22 @@
     }
 
     .MuiCard-root{
-        width: 16rem !important;
+        width: 17rem !important;
+        height: 40vh !important;
     }
+
+    .but-2>.MuiButton-containedPrimary {
+        background-color: #A03037 !important;
+    }
+
+    .css-wjh20t-MuiPagination-ul{
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+       
+    }
+
+
 
   
 

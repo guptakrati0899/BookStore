@@ -4,7 +4,7 @@ import "../ShowBooks/ShowBooks.scss";
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import bookimg from "../ShowBooks/bookimage.png"
+import bookimg from "../../Assets/bookimage.png"
 import Button from '@material-ui/core/Button';
 
 const ShowBooks = (props) => {
@@ -32,12 +32,16 @@ const ShowBooks = (props) => {
         <div className="bookAuthor">by {props.info.author}</div>
         <div className="bookPrice">Rs.{props.info.price}</div>
         <div className="book-buttons">
+            <div className= "left">
                             <Button className="but-1" variant="contained" >
                                 Add To Bag
                             </Button>
+                            </div>
+                            <div className="right">
                             <Button className="but-2" variant="contained" >
                                 Wishlist
                             </Button>
+                            </div>
 
                         </div>
       </CardActions>
