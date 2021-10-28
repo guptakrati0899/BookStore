@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import cartpic from "../Dashboard/Cart_Pic.png"
+import cartpic from "../../Assets/Cart_Pic.png"
 import "../Dashboard/Dashboard.scss"
 import Signup from '../Signup/Signup';
 import Login from '../Login/Login';
