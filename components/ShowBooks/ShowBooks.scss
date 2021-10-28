@@ -71,7 +71,7 @@
     .displaybook-header2{
         display: flex;
         margin-top: 5rem;
-    margin-left: 6.3rem;
+    margin-left: 10.3rem;
     }
 
     .displaybook-header2 >p {
@@ -80,5 +80,10 @@
         font-weight: 600;
         color: lightgray;
     }
+
+    .MuiCard-root{
+        width: 16rem !important;
+    }
+
   
 
