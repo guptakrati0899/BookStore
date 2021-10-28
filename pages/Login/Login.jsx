@@ -58,6 +58,9 @@ export default class Login extends Component {
                 console.log(response);
                 localStorage.setItem("token", response.data.id);
                 this.setState({snackbaropen:true, snackbarmsg: "Login Successfull!"})
+                var timer  = setTimeout(function(){
+                    window.location = '/BooksDashboard'
+                }, 2000);
             }).catch((error)=>{
                 console.log(error);
                 this.setState({snackbaropen:true, snackbarmsg: "Login Failed!"})

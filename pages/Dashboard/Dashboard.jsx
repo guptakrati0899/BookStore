@@ -33,7 +33,7 @@ constructor(props) {
                 </div>
                 <div className="user_content">
                     <div className="heading">
-                    <Link id="highlight"style={{textDecoration:"none",color:"black", }} to={'/'} >
+                    <Link id="highlight"style={{textDecoration:"none",color:"black", }} to={'/Login'} >
                         <span className="head">LOGIN </span>
                         </Link>
                         <Link style={{textDecoration:"none",color:"black"}} to={'/Signup'} >
@@ -42,7 +42,7 @@ constructor(props) {
                     </div>
                     <div className="box">
                     <Switch>
-                            <Route exact path="/" component={Login} />
+                            <Route exact path="/Login" component={Login} />
                             <Route exact path="/Signup" component={Signup} />      
                         </Switch>
             
