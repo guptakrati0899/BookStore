@@ -11,6 +11,17 @@ import {
   } from "react-router-dom";
 
 export class Dashboard extends Component {
+ 
+    
+constructor(props) {
+    super(props)
+
+    this.state = {
+         
+    }
+}
+
+    
     render() {
         return (
             <div className="main_display">
@@ -22,7 +33,7 @@ export class Dashboard extends Component {
                 </div>
                 <div className="user_content">
                     <div className="heading">
-                    <Link style={{textDecoration:"none",color:"black", }} to={'/'} >
+                    <Link id="highlight"style={{textDecoration:"none",color:"black", }} to={'/'} >
                         <span className="head">LOGIN </span>
                         </Link>
                         <Link style={{textDecoration:"none",color:"black"}} to={'/Signup'} >
