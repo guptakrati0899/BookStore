@@ -19,15 +19,30 @@ export class Home extends Component {
 
         this.state = {
              bookarr: [],
+            //  cartarr:[],
            
         }
     }
+
+    // getCart = () => {
+    //     obj.getCartItem()
+    //     .then((response) => {
+    //         console.log(response)
+    //         this.setState ({
+    //             cartarr: response.data.result })
+    // }).catch(error => {
+    //       console.log("error", error);
+    //     })
+    
+    //   }
 
 
 
     displayBook = () => {
         obj.getAllbooks()
         .then((response) => {
+            console.log(response)
+          
             this.setState ({
                 bookarr: response.data.result })
     })
@@ -40,6 +55,7 @@ export class Home extends Component {
 
     componentDidMount() {
         this.displayBook();
+        // this.getCart();
     }
 
 
@@ -48,9 +64,9 @@ export class Home extends Component {
         return (
             <div>
             <Header/>
-                <DisplayBook bookarr = {this.state.bookarr} displayBook={this.displayBook}/>
+                <DisplayBook bookarr = {this.state.bookarr} displayBook={this.displayBook} />
               
-
+                {/* getCart={this.getCart} */}
             <Footer/>
                 
             </div>

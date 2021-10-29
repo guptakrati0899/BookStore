@@ -56,7 +56,7 @@ export default class Login extends Component {
             console.log(Data);
             obj.login(Data).then((response)=> {
                 console.log(response);
-                localStorage.setItem("token", response.data.id);
+                localStorage.setItem("token", response.data.result.accessToken);
                 this.setState({snackbaropen:true, snackbarmsg: "Login Successfull!"})
                 var timer  = setTimeout(function(){
                     window.location = '/home'

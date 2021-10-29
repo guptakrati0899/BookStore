@@ -51,12 +51,14 @@ $width: 100%;
     color: black;
     text-transform: uppercase;
     opacity: 1;
+    margin-left: 2rem;
 }
 .link{
     cursor: pointer;
     font-weight: $font-weight;
     font-size: 1.5rem;
     color: #c0b5b5;
+    margin-left: 4rem;
 }
 .head:hover ,.btn:active,.btn:focus{
     color: black;
