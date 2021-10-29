@@ -52,7 +52,7 @@ $width: 100%;
     text-transform: uppercase;
     opacity: 1;
 }
-.head{
+.link{
     cursor: pointer;
     font-weight: $font-weight;
     font-size: 1.5rem;
@@ -60,6 +60,10 @@ $width: 100%;
 }
 .head:hover ,.btn:active,.btn:focus{
     color: black;
+}
+
+.link {
+    text-decoration: none;
 }
 
 
