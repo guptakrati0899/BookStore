@@ -6,6 +6,9 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import bookimg from "../../Assets/bookimage.png"
 import Button from '@material-ui/core/Button';
+import UserService from "../../services/user_services";
+
+const obj = new UserService();
 
 const ShowBooks = (props) => {
   
@@ -14,6 +17,22 @@ const ShowBooks = (props) => {
   const newNote2 = () => {
     setNewBook(!newBook);
   };
+
+
+  
+  const addToCart = (info) => {
+
+
+
+    obj.addToCart(info._id).then((response) => {
+
+      console.log(response);
+
+    }).catch(error => {
+      console.log("error", error);
+    })
+  }
+
 
 
 
@@ -33,7 +52,7 @@ const ShowBooks = (props) => {
         <div className="bookPrice">Rs.{props.info.price}</div>
         <div className="book-buttons">
             <div className= "left">
-                            <Button className="but-1" variant="contained" >
+                            <Button className="but-1" variant="contained"  onClick={() => { addToCart(props.info) }}   > 
                                 Add To Bag
                             </Button>
                             </div>

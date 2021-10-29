@@ -31,6 +31,7 @@ $border: 1px solid #d9cccc;
 
 .cartBag-content > div {
     font-weight: 600;
+    margin-left:2rem;
 }
 .main-cart {
     display: flex;
@@ -103,11 +104,16 @@ $border: 1px solid #d9cccc;
     padding-left: 23px;
     margin-left: 13.2rem;
 }
+
+.address-frame > div , .order-frame > div{
+    margin-left:1.9rem;
+}
 .order-frame {
-    @include flex(flex, center, column, 78%, 30px, 12px);
+    @include flex(flex, center, column, 54.6%, 30px, 12px);
     border: $border;
     padding: 23px;
     margin-bottom: 200px;
+    margin-left: 13rem;
 }
 .address-frame-details {
     @include flex(flex, space-evenly, column, 54.5%, 552px, null);
@@ -119,6 +125,8 @@ $border: 1px solid #d9cccc;
 .customer-dtl {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 1.5rem ;
+    
 }
 .dtl-btn {
     color: #a03037 !important;
@@ -154,6 +162,19 @@ $border: 1px solid #d9cccc;
     padding: 20px;
     margin-top: 10px;
     margin-bottom: 164px;
+}
+
+.details{
+    margin-left:2rem !important;
+}
+
+
+.radio-btn{
+    display: flex;
+}
+
+.css-dmmspl-MuiFormGroup-root{
+    display:initial !important;
 }
 // .continue{
 

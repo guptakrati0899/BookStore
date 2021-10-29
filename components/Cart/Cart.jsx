@@ -5,9 +5,11 @@ import Button from '@material-ui/core/Button';
 import Footer from '../Footer/Footer'
 import TextField from '@material-ui/core/TextField';
 import Checkbox from '@material-ui/core/Checkbox';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Backdrop from '@material-ui/core/Backdrop';
-import CircularProgress from '@material-ui/core/CircularProgress';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormControl from '@mui/material/FormControl';
+import FormLabel from '@mui/material/FormLabel';
 
 
 
@@ -63,6 +65,7 @@ export class Cart extends Component {
             </div>
             {this.state.open ?
                         <div className="address-frame-details">
+                            <div className="details">
                             <div className="customer-dtl">
                                 <div className="header-detail">Customer Details</div>
                                 <div className="dtl-btn">Edit</div>
@@ -136,7 +139,7 @@ export class Cart extends Component {
                                     <div><TextField
                                      
                                         size="small"
-                                        label="City"
+                                        label="City/Town"
                                         type="text"
                                         name="City"
                                         variant="outlined"
@@ -157,37 +160,20 @@ export class Cart extends Component {
                             <div className="heading">
                                 <div className="work ">Type</div>
                             </div>
-                            <div><FormControlLabel
-                                control={
-                                    <Checkbox
-                                   
-                                        name="checkedB"
-                                        color="primary"
-                                    />
-                                }
-                                label="Home"
-                            />
-                                <FormControlLabel
-                                    control={
-                                        <Checkbox
-                                          
-                                            name="checkedB"
-                                            color="primary"
-                                        />
-                                    }
-                                    label="Work"
-                                />
+                            <div className="radio-btn">
+                            <FormControl component="fieldset">
+                                <RadioGroup
+                                    aria-label="Type"
+                                    name="radio-buttons-group"
+                                >
+                                    <FormControlLabel value="Home" control={<Radio />} label="Home" />
+                                    <FormControlLabel value="work" control={<Radio />} label="Work" />
+                                    <FormControlLabel value="other" control={<Radio />} label="Other" />
+                                </RadioGroup>
+                            </FormControl>
+                            </div>
 
-                                <FormControlLabel
-                                    control={
-                                        <Checkbox
-                                       
-                                            name="checkedB"
-                                            color="primary"
-                                        />
-                                    }
-                                    label="Other"
-                                /> </div>
+                        </div>
 
                             {this.state.openContent ? null :
                                 <div className="btn-content">
@@ -201,7 +187,9 @@ export class Cart extends Component {
                         :
 
                         <div className="address-frame">
-                            Address Details
+                            <div>
+                            Customer Details
+                            </div>
                         </div>
 
                     }
@@ -246,7 +234,9 @@ export class Cart extends Component {
                         </div>
                         :
                         <div className="order-frame" >
+                            <div >
                             Order Summary
+                            </div>
                         </div>
                     }
                        <Footer/>
