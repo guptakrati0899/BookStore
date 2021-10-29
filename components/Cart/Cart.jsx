@@ -111,9 +111,9 @@ change = (e) => {
                 <div className="CartBag-frame">
                     <div className="cartBag-content">
                         <div >My Cart</div>
-                        <div>
+                        <div className="img-content">
                         <img className="img-book" src={Image} alt="" />
-                    </div>
+                  
                     <div className="text-content">
                                 <div className="bag-text">
                                     <div className="cart-title">Don't Make Me Think</div>
@@ -126,6 +126,7 @@ change = (e) => {
                                     <div className="plus">+</div>
                                     <div className="remove">Remove</div>
                                 </div>
+                            </div>
                             </div>
                         <div className="btn-content">
                             <Button variant="contained" className="btn-place"  onClick={this.handleClick} >
