@@ -6,13 +6,7 @@ import Success from '../../Assets/success.png';
 import Button from '@material-ui/core/Button';
 
 class OrderPlaced extends Component {
-    constructor(props) {
-        super(props)
-    
-        this.state = {
-             
-        }
-    }
+
 
     continueShopping = () => {
         this.props.history.push('/home')
