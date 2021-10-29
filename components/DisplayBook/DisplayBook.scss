@@ -12,7 +12,7 @@
 
 
 .menudiv {
-   margin-left: 55rem;
+   margin-left: 58rem;
    margin-top:1.5rem;
 
   }
@@ -36,6 +36,18 @@ margin-left: 13rem;
     margin-left:0.6rem;
     font-weight: 600;
     color: lightgray;
+}
+
+
+.css-wjh20t-MuiPagination-ul{
+    display: flex;
+    justify-content: center;
+    margin-top: -2rem;
+   
+}
+
+.css-1p5q5e5-MuiStack-root{
+    margin-bottom: 2rem;
 }
 
 
@@ -83,6 +95,10 @@ margin-left: 13rem;
     
     .displaybook-mainContainer{
         margin-left: -1.5rem;
+    }
+
+    .css-wjh20t-MuiPagination-ul{
+        margin-left:-1.5rem;
     }
 
 

@@ -9,8 +9,8 @@
     color: #fff;
     opacity: 0.8;
     float: left;
-    font-size: 0.8rem;
-    margin-left: 8rem;
+    font-size: 0.9rem;
+    margin-left: 14rem;
 }
 
 
@@ -28,7 +28,16 @@
 
     .footer_title{
     font-size: 0.9rem;
-    margin-left: 11rem;
+    margin-left: 7rem;
     }
 
 }
+
+
+@media screen and (max-width: 340px){
+
+    .footer_title{
+        margin-left: 2rem;
+}
+    }
+

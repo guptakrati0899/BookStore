@@ -26,7 +26,7 @@ const DisplayBook = (props) => {
    return <div>
         <div className="displaybook-header2">
             <h2 className="header-text-displayBook">Books</h2>
-            <p className="header-para">(128 items)</p>
+            <p className="header-para">({props.bookarr.length})</p>
         
 
             <div className="menudiv">
