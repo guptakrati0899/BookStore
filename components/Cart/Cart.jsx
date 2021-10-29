@@ -162,7 +162,7 @@ export class Cart extends Component {
                                     /></div>
                                 </div>
                             </div>
-                            <div className="heading">
+                            <div className="heading0">
                                 <div className="work ">Type</div>
                             </div>
                             <div className="radio-btn">
@@ -204,7 +204,7 @@ export class Cart extends Component {
 
                         <div className="order-content">
 
-                            <div className="header-detail" >Order Summary</div>
+                            <div className="header1-detail" >Order Summary</div>
                             {/* <>{this.state.book.map((value, index) => {
                                 return (
                                     <div>
