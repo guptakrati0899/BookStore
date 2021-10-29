@@ -22,6 +22,7 @@
     display: flex;
     justify-content: center;
     margin-top: 2rem;
+    height: 2.5rem;
 }
 .success_text{
     font-size: large;
@@ -33,8 +34,13 @@
     font-weight:500;
 }
 .info_table{
+    
     border: 1px solid lightgrey;
     margin-top: 3rem;
+    table{
+        height: 14vh;
+
+    }
     th{
         background-color:rgb(240, 239, 239);
     }
@@ -46,4 +52,71 @@
     .image1{
         width: 200px;
     }
+}
+
+
+@media only screen and (min-width: 630px) and (max-width:750px) {
+    .success_main {
+        min-height: 100vh;
+    }
+    .image1 {
+        width: 40vw !important;
+        margin-top: 2rem;
+    }
+    .success_text {
+        width: 40%;
+    }
+    .info_table {
+        margin-top: 3rem;
+    }
+    .ctn_shopping {
+        margin-top: 2rem;
+    }
+}
+
+@media screen and (min-width: 360px) and (max-width: 630px){
+    .success_main {
+        min-height: 93vh;
+    }
+    .image1 {
+        width: 60vw !important;
+        margin-top: -2rem;
+    }
+    .success_text {
+        width: 81%;
+        margin-top: 2rem
+    }
+    .info_table {
+        display: none;
+    }
+    .ctn_shopping {
+        margin-top: 3rem;
+    }
+}
+
+@media screen and (max-width: 340px){
+    .success_main {
+        min-height: 88vh;
+    }
+    .image1 {
+        width: 60vw !important;
+        margin-top: 3rem;
+    }
+    .success_text {
+        width: 91%;
+    }
+    .info_table {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px){
+     .image1{
+        width: 46vw !important;
+     }
+
+     .success_text{
+        width: 34%;
+        margin-left: 1rem;
+     }
 }
