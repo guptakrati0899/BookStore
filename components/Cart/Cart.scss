@@ -16,18 +16,20 @@ $border: 1px solid #d9cccc;
 .header-detail {
     font-weight: 600;
     font-size: 18px;
+    margin-left: 2rem ;
 }
 .title {
     width: 81%;
 }
 .cartBag-content {
     width: 55%;
-    min-height: 100px;
+    min-height: 24vh;
     border: $border;
     padding: 20px;
     margin-top: 20px;
     margin-left: -19rem ;
 }
+
 
 .cartBag-content > div {
     font-weight: 600;
@@ -89,10 +91,15 @@ $border: 1px solid #d9cccc;
         margin-left: 39px;
     }
 }
-.btn-content {
-    display: flex;
+.cartBag-content > .btn-content, .order-content >.btn-content {
+   
+    margin-top: 10rem;
+}
+
+.btn-content{
+    display:flex;
     justify-content: flex-end;
-    margin-top: 37px;
+    margin-right:1rem;
 }
 .btn-place {
     background-color: #3371b5 !important;
@@ -113,7 +120,7 @@ $border: 1px solid #d9cccc;
     border: $border;
     padding: 23px;
     margin-bottom: 200px;
-    margin-left: 13rem;
+    margin-left: 13.2rem;
 }
 .address-frame-details {
     @include flex(flex, space-evenly, column, 54.5%, 552px, null);
@@ -129,6 +136,7 @@ $border: 1px solid #d9cccc;
     
 }
 .dtl-btn {
+    margin-right:2rem;
     color: #a03037 !important;
 }
 .custm-content-names {
@@ -136,8 +144,9 @@ $border: 1px solid #d9cccc;
 }
 .heading {
     @include flex(flex, space-between, null, 158px, null, null);
+    margin-left: 0rem;
 }
-.aheading > .work {
+.heading > .work {
     font-weight: 500;
     font-size: 0.9rem;
 
@@ -156,12 +165,13 @@ $border: 1px solid #d9cccc;
     justify-content: space-between;
 }
 .order-content {
-    width: 78%;
-    min-height: 300px;
+    width: 55%;
+    min-height: 223px;
     border: 1px solid #d9cccc;
     padding: 20px;
     margin-top: 10px;
     margin-bottom: 164px;
+    margin-left: 13rem ;
 }
 
 .details{

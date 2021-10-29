@@ -10,6 +10,7 @@ import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
+import { Link } from 'react-router-dom';
 
 
 
@@ -45,6 +46,10 @@ export class Cart extends Component {
 
     handleClick = () => {
         this.setState({ open: true });
+    }
+
+    handleContinue = () => {
+        this.setState({ openContent: true });
     }
 
     
@@ -177,7 +182,7 @@ export class Cart extends Component {
 
                             {this.state.openContent ? null :
                                 <div className="btn-content">
-                                    <Button variant="contained" className="btn-place">
+                                    <Button variant="contained" className="btn-place" onClick={this.handleContinue}>
                                         Continue
                                     </Button>
                                 </div>
@@ -195,7 +200,7 @@ export class Cart extends Component {
                     }
 
 
-                    {this.state.openContent ?
+                    {this.state.openContent  ? 
 
                         <div className="order-content">
 
@@ -231,6 +236,13 @@ export class Cart extends Component {
                                 )
                             })
                             } </> */}
+
+                                        <div className="btn-content">
+                                                <Link  style={{textDecoration:"none"}} to="/OrderPlaced" ><Button variant="contained" className="btn-place"  >
+                                                    Checkout
+                                                </Button>
+                                                </Link>
+                                                </div>
                         </div>
                         :
                         <div className="order-frame" >
@@ -239,6 +251,8 @@ export class Cart extends Component {
                             </div>
                         </div>
                     }
+
+
                        <Footer/>
                 </div>
         

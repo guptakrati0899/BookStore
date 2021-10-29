@@ -7,6 +7,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import InputBase from '@material-ui/core/InputBase';
 import ShoppingCartOutlined from '@mui/icons-material/ShoppingCartOutlined';
 import Badge from '@mui/material/Badge';
+import { Link } from 'react-router-dom';
 
 class Header extends Component {
 
@@ -37,7 +38,7 @@ class Header extends Component {
                                         vertical: 'top',
                                         horizontal: 'right',
                                     }}>
-                                    <ShoppingCartOutlined />
+                                       <Link to="/Cart" ><ShoppingCartOutlined /> </Link>
                                 </Badge>
                             </div>
                         </div>
