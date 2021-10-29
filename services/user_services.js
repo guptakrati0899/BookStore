@@ -23,6 +23,16 @@ class UserService {
         return response;
 
     }
+    getCartItem(data){
+        let response = obj.getMethod(`${baseurl}get/get_cart_items`, headerconfig);
+        return response;
+    }
+
+    addToCart(id){
+        let response = obj.postMethod(`${baseurl}add_cart_item/${id}`,{}, headerconfig);
+        return response;
+    
+    }
    
 }
 
