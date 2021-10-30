@@ -9,6 +9,14 @@
 }
 $margin-left: 162px;
 $border: 1px solid #d9cccc;
+
+
+.main_cart {
+    display: flex;
+}
+.ordered{
+    margin-left: 2rem;
+}
 .CartBag-frame {
     @include flex(flex,center ,column ,null ,100% ,100px );
     align-items: center;
@@ -164,6 +172,7 @@ rem
 }
 .custm-content-names {
     @include flex(flex, space-between, null, 460px, null, null);
+    min-height: 5rem;
 }
 .heading0 {
     @include flex(flex, space-between, null, 158px, null, null);
@@ -185,6 +194,7 @@ rem
 .city-state {
     display: flex;
     width: 464px;
+    min-height: 5rem;
     justify-content: space-between;
 }
 .order-content {

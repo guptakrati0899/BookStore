@@ -10,6 +10,10 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import Image from "../../Assets/bookimage.png"
 import { Link } from 'react-router-dom';
+import UserService from '../../services/user_services';
+
+
+const obj = new UserService();
 
 
 
@@ -45,6 +49,7 @@ export class Cart extends Component {
             addError:false,
             cityError:false,
             stateError:false,
+            book: [],
 
 
 
@@ -103,32 +108,75 @@ change = (e) => {
 }
 
 
+
+
+componentDidMount() {
+    this.getCartItem();
+}
+
+getCartItem = () => {
+    obj.getCartItem().then((response) => {
+        console.log(response.data.result);
+        this.setState({ book: response.data.result });
+    }).catch(error => {
+        console.log(error);
+    })
+}
+
+
     
     render() {
+
+
+        const cartDetails = this.state.book.map((value, index) => {
+            return (
+                <div className="main_cart">
+                     <div className="img-content">
+                        <img className="img-book" src={Image} alt="" />
+                    </div>
+                    <div className="text-content">
+                        <div className="bag-text">
+                            <div className="cart-title">{value.product_id.bookName}</div>
+                            <div className="cart-bookAuthor">by {value.product_id.author}</div>
+                            <div className="price">Rs. {value.product_id.price}</div>
+                        </div>
+                        <div className="count-content">
+                            <div className="minus">-</div>
+                            <div className="count">1</div>
+                            <div className="plus">+</div>
+                            <div className="remove">Remove</div>
+                        </div>
+                    </div>
+                </div>
+            )
+        });    
+
+
+        const orderDetails = this.state.book.map((value, index) => {
+            return (
+                <div className="main_cart">
+                     <div className="img-content">
+                        <img className="img-book" src={Image} alt="" />
+                    </div>
+                    <div className="text-content">
+                        <div className="bag-text">
+                            <div className="cart-title">{value.product_id.bookName}</div>
+                            <div className="cart-bookAuthor">by {value.product_id.author}</div>
+                            <div className="price">Rs. {value.product_id.price}</div>
+                        </div>
+                    </div>
+                </div>
+            )
+        }); 
+
         return (
             <div>
                 <Header/>
                 <div className="CartBag-frame">
                     <div className="cartBag-content">
-                        <div >My Cart</div>
-                        <div className="img-content">
-                        <img className="img-book" src={Image} alt="" />
-                  
-                    <div className="text-content">
-                                <div className="bag-text">
-                                    <div className="cart-title">Don't Make Me Think</div>
-                                    <div className="cart-bookAuthor">by Steve Kurg</div>
-                                    <div className="price">Rs. 1500</div>
-                                </div>
-                                <div className="count-content">
-                                    <div className="minus">-</div>
-                                    <div className="count">1</div>
-                                    <div className="plus">+</div>
-                                    <div className="remove">Remove</div>
-                                </div>
-                            </div>
-                            </div>
-                        <div className="btn-content">
+                        <div >My Cart ({this.state.book.length})</div>
+                        {cartDetails}
+                          <div className="btn-content">
                             <Button variant="contained" className="btn-place"  onClick={this.handleClick} >
                                 Place Order
                             </Button>
@@ -296,17 +344,9 @@ change = (e) => {
                         <div className="order-content">
 
                             <div className="header1-detail" >Order Summary</div>
-                            <div className="img-content">
-                        <img className="img-book" src={Image} alt="" />
-                  
-                    <div className="text-content">
-                                <div className="bag-text">
-                                    <div className="cart-title">Don't Make Me Think</div>
-                                    <div className="cart-bookAuthor">by Steve Kurg</div>
-                                    <div className="price">Rs. 1500</div>
-                                </div>
-                                </div>
-                                </div>
+                            <div className="ordered">
+                            {orderDetails}
+                            </div>
                            
 
                                         <div className="btn-content">
