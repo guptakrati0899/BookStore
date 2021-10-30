@@ -5,7 +5,7 @@ const baseurl = "https://new-bookstore-backend.herokuapp.com/bookstore_user/"
 const token = localStorage.getItem("token");
 const headerconfig = {
     headers: {
-    Authorization: token,
+        "x-access-token": token,
     }
 };
 
