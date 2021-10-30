@@ -33,6 +33,10 @@ class UserService {
         return response;
     
     }
+    getCartItem() {
+        let response = obj.getMethod(`${baseurl}get_cart_items`, headerconfig);
+        return response;
+    }
    
 }
 
