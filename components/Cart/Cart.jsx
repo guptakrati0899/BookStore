@@ -296,37 +296,18 @@ change = (e) => {
                         <div className="order-content">
 
                             <div className="header1-detail" >Order Summary</div>
-                            {/* <>{this.state.book.map((value, index) => {
-                                return (
-                                    <div>
-                                        <div className="main-cart">
-                                            <div>
-                                                <img className="img-book" src={Image} alt="lll" />
-                                            </div>
-                                            <div className="text-content">
-                                                <div className="bag-text">
-                                                    <div className="cart-title">{value.product_id.bookName}</div>
-                                                    <div className="cart-bookAuthor">by {value.product_id.author}</div>
-                                                    <div className="price">Rs.{value.product_id.price}</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {this.state.book.length - 1 == index ?
-                                            <div className="btn-content">
-                                                <Button variant="contained" className="btn-place" onClick={this.OrderPlaced} >
-                                                    Checkout
-                                                </Button>
-                                                <Backdrop className={backdrop} open={this.state.openBackDrop} onClick={this.handleClose}>
-                                                    <CircularProgress color="inherit" />
-                                                </Backdrop>
-
-                                            </div> : null}
-                                    </div>
-
-
-                                )
-                            })
-                            } </> */}
+                            <div className="img-content">
+                        <img className="img-book" src={Image} alt="" />
+                  
+                    <div className="text-content">
+                                <div className="bag-text">
+                                    <div className="cart-title">Don't Make Me Think</div>
+                                    <div className="cart-bookAuthor">by Steve Kurg</div>
+                                    <div className="price">Rs. 1500</div>
+                                </div>
+                                </div>
+                                </div>
+                           
 
                                         <div className="btn-content">
                                                 <Link  style={{textDecoration:"none"}} to="/OrderPlaced" ><Button variant="contained" className="btn-place"  >
