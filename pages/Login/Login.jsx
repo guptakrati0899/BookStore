@@ -3,7 +3,8 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import '../Login/Login.scss';
 import UserService from '../../services/user_services';
-import { Snackbar, IconButton } from '@mui/material';
+import { Snackbar, IconButton, touchRippleClasses } from '@mui/material';
+import { Redirect } from 'react-router';
 
 
 const obj = new UserService();
@@ -22,6 +23,7 @@ export default class Login extends Component {
             passError: false,
             snackbaropen: false, 
             snackbarmsg: "",
+            redirect:"",
         }
        
     }
@@ -58,9 +60,10 @@ export default class Login extends Component {
                 console.log(response);
                 localStorage.setItem("token", response.data.result.accessToken);
                 this.setState({snackbaropen:true, snackbarmsg: "Login Successfull!"})
-                var timer  = setTimeout(function(){
-                    window.location = '/home'
-                }, 2000);
+                    this.setState({
+                        redirect : "/home"
+                    })
+             
             }).catch((error)=>{
                 console.log(error);
                 this.setState({snackbaropen:true, snackbarmsg: "Login Failed!"})
@@ -84,6 +87,10 @@ export default class Login extends Component {
 
 
     render() {
+
+        if(this.state.redirect){
+            return <Redirect to ={this.state.redirect}/>
+        }
         
         return (
             <div>
