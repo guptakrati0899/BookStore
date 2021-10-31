@@ -50,6 +50,7 @@ export class Cart extends Component {
             cityError:false,
             stateError:false,
             book: [],
+            address:[],
 
 
 
@@ -94,23 +95,28 @@ export class Cart extends Component {
         var isValid = this.isValidated();
         if(!isValid) {
             console.log("Validation Sucessfull!");
+            this.setState({ openContent: true });
 
 
-            let Data = {
-                "addressType": "Home",
-                "fullAddress": `${this.state.Address},${this.state.Locality},${this.state.PinCode}`,
-                "city": this.state.City,
-                "state": this.state.State
-            }
-            obj.customerDetails(Data).then((response) => {
-                console.log(response);
-                this.setState({ openContent: true });
+
+            // let userData = {
+    
+            //     "addressType": "Home",
+            //     "fullAddress": `${this.state.Address},${this.state.Locality},${this.state.PinCode}`,
+            //     "city": this.state.City,
+            //     "state": this.state.State,
+                    
+            // }
+            // console.log(userData)
+            // obj.customerDetails(userData).then((response) => {
+            //     console.log(response);
+            //     this.setState({ openContent: true });
 
 
-            })
-                .catch(error => {
-                    console.log('Error', error);
-                });
+            // })
+            //     .catch(error => {
+            //         console.log('Error', error);
+            //     });
 
 
     }
@@ -138,6 +144,35 @@ getCartItem = () => {
     }).catch(error => {
         console.log(error);
     })
+}
+
+
+
+OrderPlaced = () => {
+    let orderDetails = [];
+    this.state.book.map((value) => {
+        let arr = {
+            "product_id": value.product_id._id,
+            "product_name": value.product_id.bookName,
+            "product_quantity": value.quantityToBuy,
+            "product_price": value.product_id.price
+        };
+        orderDetails.push(arr);
+    })
+
+    let data = {
+        orders: orderDetails,
+    };
+    console.log("DATA ORDER SUCCES", data);
+    
+    obj.orderItem(data).then((response) => {
+        
+        console.log(response);
+
+    }).catch((error) => {
+        console.log(error);
+    })
+
 }
 
 
@@ -367,7 +402,7 @@ getCartItem = () => {
                            
 
                                         <div className="btn-content">
-                                                <Link  style={{textDecoration:"none"}} to="/OrderPlaced" ><Button variant="contained" className="btn-place"  >
+                                                <Link  style={{textDecoration:"none"}} to="/OrderPlaced" ><Button variant="contained" className="btn-place" onClick= {this.OrderPlaced}  >
                                                     Checkout
                                                 </Button>
                                                 </Link>
