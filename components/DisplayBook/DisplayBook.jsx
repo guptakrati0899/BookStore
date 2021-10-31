@@ -33,6 +33,39 @@ const DisplayBook = (props) => {
 
 
 
+
+    const asec = () => {
+   
+      let sortData = bookarr.sort((a, b) => (a.price < b.price && 1) || -1);
+      console.log(sortData);
+      setBooks(sortData);
+      handleClose();
+    };
+  
+    const desc = () => {
+
+      let sortData = bookarr.sort((a, b) => (a.price > b.price && 1) || -1);
+      console.log(sortData);
+      setBooks(sortData);
+      handleClose();
+    };
+  
+    const alph = () => {
+     
+      let sortData = bookarr.sort((a, b) =>
+      (a.bookName > b.bookName && 1) || -1);
+     
+      console.log(sortData);
+      setBooks(sortData);
+      handleClose();
+    };
+
+
+
+
+
+
+
    const displayBook = () => {
       obj.getAllbooks()
       .then((response) => {
@@ -148,9 +181,9 @@ const DisplayBook = (props) => {
                 
               }}
             >
-              <MenuItem value ="asec" >Price: High to low</MenuItem>
-              <MenuItem  value="dsec"onClick={handleClose}>Price: Low to high</MenuItem>
-              <MenuItem value=" alph-asec"onClick={handleClose}>Newest arivals</MenuItem>
+              <MenuItem value ="asec" onClick={asec} >Price: High to low</MenuItem>
+              <MenuItem  value="dsec"onClick={desc}>Price: Low to high</MenuItem>
+              <MenuItem value=" alph-asec"onClick={alph}>Newest arivals</MenuItem>
             </Menu>
           </div>
        </div>
