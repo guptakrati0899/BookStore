@@ -18,6 +18,7 @@ $color: grey;
     font-size: 1.3rem;
     margin-top: 0.1rem; 
 }
+
 .search {
     position: relative;
     border-radius: 5px;
@@ -34,6 +35,10 @@ $color: grey;
     height: 100%;
     position: absolute;
     pointer-events: none;
+}
+.searchIcon > .css-i4bv87-MuiSvgIcon-root{
+    color: $color !important;
+
 }
 .input {
     color: $color;

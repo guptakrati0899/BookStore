@@ -223,7 +223,7 @@ OrderPlaced = () => {
 
         return (
             <div>
-                <Header/>
+                <Header value={this.state.book.length}/>
                 <div className="CartBag-frame">
                     <div className="cartBag-content">
                         <div >My Cart ({this.state.book.length})</div>

@@ -10,17 +10,56 @@ import { Pagination, Stack } from '@mui/material';
 
 const DisplayBook = (props) => { 
     const [anchorEl, setAnchorEl] = React.useState(null);
+    const [search, setSearchBook] = React.useState("");
+    const [searchData, setSearchData] = React.useState([]);
+    
+
     const open = Boolean(anchorEl);
 
     const handleClick = (event) => {
       setAnchorEl(event.currentTarget);
     };
+
     const handleClose = () => {
       setAnchorEl(null);
     };
 
 
+  
+
+
+ 
+
+
   const bookList = props.bookarr.map((info) => <ShowBooks info={info} displayBook ={props.displayBook}/>);
+
+
+
+  const searchBooks = (e) => {
+    setSearchBook(e.target.value);
+    console.log(e.target.value);
+    let filterBooks = props.bookarr;
+    filterBooks = props.bookarr.filter((val) => {
+   
+      console.log("value---------->",val);
+       return val.author.toLowerCase().includes(e.target.value)
+              ||val.bookName.toLowerCase().includes(e.target.value)
+              ||val.description.toUpperCase().includes(e.target.value)
+              ||val.author.toUpperCase().includes(e.target.value)
+              ||val.bookName.toUpperCase().includes(e.target.value)
+              ||val.author.includes(e.target.value)
+              ||val.bookName.includes(e.target.value)
+        })
+    if (e.target.value === ""){
+      setSearchData(filterBooks);
+      console.log(setSearchData(filterBooks))
+  }
+  else{
+    setSearchData(props.bookarr)
+    console.log("search data", setSearchData(filterBooks))
+  }
+}
+
 
 
    return <div>

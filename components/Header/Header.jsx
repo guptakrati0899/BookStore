@@ -9,6 +9,11 @@ import ShoppingCartOutlined from '@mui/icons-material/ShoppingCartOutlined';
 import Badge from '@mui/material/Badge';
 import { Link } from 'react-router-dom';
 
+
+const searchBooks = (e) => {
+    this.props.search(e)
+}
+
 class Header extends Component {
 
     render() {
@@ -27,12 +32,13 @@ class Header extends Component {
                             <InputBase
                                 placeholder="Search…"
                                 className="input"
+                                onChange={e => searchBooks(e)}
                             />
                         </div>
                         <div className="side-header">
                             <div className="cart_main">
                                 <span className="cart">Cart</span>
-                                <Badge badgeContent={1} 
+                                <Badge badgeContent={this.props.value} 
                                     color="primary"
                                     anchorOrigin={{
                                         vertical: 'top',
