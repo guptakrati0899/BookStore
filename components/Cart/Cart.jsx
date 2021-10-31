@@ -99,24 +99,24 @@ export class Cart extends Component {
 
 
 
-            // let userData = {
+            let userData = {
     
-            //     "addressType": "Home",
-            //     "fullAddress": `${this.state.Address},${this.state.Locality},${this.state.PinCode}`,
-            //     "city": this.state.City,
-            //     "state": this.state.State,
+                "addressType": "Home",
+                "fullAddress": `${this.state.Address},${this.state.Locality},${this.state.PinCode}`,
+                "city": this.state.City,
+                "state": this.state.State,
                     
-            // }
-            // console.log(userData)
-            // obj.customerDetails(userData).then((response) => {
-            //     console.log(response);
-            //     this.setState({ openContent: true });
+            }
+            console.log(userData)
+            obj.customerDetails(userData).then((response) => {
+                console.log(response);
+                this.setState({ openContent: true });
 
 
-            // })
-            //     .catch(error => {
-            //         console.log('Error', error);
-            //     });
+            })
+                .catch(error => {
+                    console.log('Error', error);
+                });
 
 
     }
@@ -223,7 +223,7 @@ OrderPlaced = () => {
 
         return (
             <div>
-                <Header value={this.state.book.length}/>
+                <Header value={this.state.book.length} getCard={this.getCartItem}/>
                 <div className="CartBag-frame">
                     <div className="cartBag-content">
                         <div >My Cart ({this.state.book.length})</div>
