@@ -43,6 +43,13 @@ class UserService {
         return response;
       
     }
+
+    orderItem(data) {
+
+        let response = obj.postMethod(`${baseurl}add/order`, data, headerconfig);
+        return response;
+    
+    }
    
 }
 
