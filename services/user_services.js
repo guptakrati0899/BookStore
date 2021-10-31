@@ -37,6 +37,12 @@ class UserService {
         let response = obj.getMethod(`${baseurl}get_cart_items`, headerconfig);
         return response;
     }
+
+    customerDetails(data) {
+        let response = obj.putMethod(`${baseurl}edit_user`, data, headerconfig);
+        return response;
+      
+    }
    
 }
 
