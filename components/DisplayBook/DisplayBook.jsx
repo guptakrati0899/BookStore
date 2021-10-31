@@ -6,12 +6,19 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { Pagination, Stack } from '@mui/material';
+import UserService from "../../services/user_services";
+
+const obj = new UserService();
+
+
+
 
 
 const DisplayBook = (props) => { 
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [search, setSearchBook] = React.useState("");
     const [searchData, setSearchData] = React.useState([]);
+    const [bookarr, setBooks] = React.useState([]);
     
 
     const open = Boolean(anchorEl);
@@ -25,13 +32,65 @@ const DisplayBook = (props) => {
     };
 
 
+
+   const displayBook = () => {
+      obj.getAllbooks()
+      .then((response) => {
+          console.log(response)
+              setBooks(response.data.result );
+  })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+
+  React.useEffect(() =>{
+    displayBook();
+  },[]);
+
+
+
+
+    
+  // const sort = () => {
+
+  //   if (e.target.value === "asec") {
+  //     let sortData = [...props.bookarr].sort(function (a, b) {
+  //       return a.price - b.price
+  //     });
+  //     setState.bookarr(sortData);
+  //   }
+  //   else if (e.target.value === "dsec") {
+  //     let sortData = [...props.bookarr].sort(function (a, b) {
+  //       return b.price - a.price
+  //     });
+  //     props.bookarr(sortData);
+  //   }
+  //   else if (e.target.value === "alp-asec") {
+  //     let sortData = [...props.bookarr].sort(function (a, b) {
+  //       if (a.bookName < b.bookName) { return -1; }
+  //       return 0;
+  //     });
+  //     props.bookarr(sortData);
+  //   }
+  //   else if (e.target.value === "alp-dsec") {
+  //     let sortData = [...props.bookarr].sort(function (a, b) {
+  //       if (a.bookName > b.bookName) { return 1; }
+  //       return 0;
+  //     });
+  //     props.bookarr(sortData);
+  //   }
+  // }
+
+
   
 
 
  
 
 
-  const bookList = props.bookarr.map((info) => <ShowBooks info={info} displayBook ={props.displayBook}/>);
+  const bookList = bookarr.map((info) => <ShowBooks info={info} displayBook ={displayBook}/>);
 
 
 
@@ -65,7 +124,7 @@ const DisplayBook = (props) => {
    return <div>
         <div className="displaybook-header2">
             <h2 className="header-text-displayBook">Books</h2>
-            <p className="header-para">({props.bookarr.length})</p>
+            <p className="header-para">({bookarr.length})</p>
         
 
             <div className="menudiv">
@@ -83,13 +142,15 @@ const DisplayBook = (props) => {
               anchorEl={anchorEl}
               open={open}
               onClose={handleClose}
+            
               MenuListProps={{
                 "aria-labelledby": "basic-button",
+                
               }}
             >
-              <MenuItem onClick={handleClose}>Price: High to low</MenuItem>
-              <MenuItem onClick={handleClose}>Price: Low to high</MenuItem>
-              <MenuItem onClick={handleClose}>Newest arivals</MenuItem>
+              <MenuItem value ="asec" >Price: High to low</MenuItem>
+              <MenuItem  value="dsec"onClick={handleClose}>Price: Low to high</MenuItem>
+              <MenuItem value=" alph-asec"onClick={handleClose}>Newest arivals</MenuItem>
             </Menu>
           </div>
        </div>
