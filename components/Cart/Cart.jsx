@@ -94,7 +94,24 @@ export class Cart extends Component {
         var isValid = this.isValidated();
         if(!isValid) {
             console.log("Validation Sucessfull!");
-            this.setState({ openContent: true });
+
+
+            let Data = {
+                "addressType": "Home",
+                "fullAddress": `${this.state.Address},${this.state.Locality},${this.state.PinCode}`,
+                "city": this.state.City,
+                "state": this.state.State
+            }
+            obj.customerDetails(Data).then((response) => {
+                console.log(response);
+                this.setState({ openContent: true });
+
+
+            })
+                .catch(error => {
+                    console.log('Error', error);
+                });
+
 
     }
     
