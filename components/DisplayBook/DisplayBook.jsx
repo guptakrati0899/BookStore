@@ -183,7 +183,7 @@ const DisplayBook = (props) => {
             >
               <MenuItem value ="asec" onClick={asec} >Price: High to low</MenuItem>
               <MenuItem  value="dsec"onClick={desc}>Price: Low to high</MenuItem>
-              <MenuItem value=" alph-asec"onClick={alph}>Newest arivals</MenuItem>
+              <MenuItem value=" alph-asec"onClick={alph}>Newest arrivals</MenuItem>
             </Menu>
           </div>
        </div>

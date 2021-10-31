@@ -13,6 +13,8 @@ const obj = new UserService();
 const ShowBooks = (props) => {
   
   const [newBook, setNewBook] = useState(false);
+  const [add,setadd] = useState(false);
+  const [wish,setwish] = useState(false);
 
   const newNote2 = () => {
     setNewBook(!newBook);
@@ -21,6 +23,8 @@ const ShowBooks = (props) => {
 
   
   const addToCart = (info) => {
+
+    setadd(true);
 
 
 
@@ -31,6 +35,11 @@ const ShowBooks = (props) => {
     }).catch(error => {
       console.log("error", error);
     })
+  }
+
+  const Wishlist =()=>{
+    setwish(true);
+    console.log("wish")
   }
 
 
@@ -52,12 +61,17 @@ const ShowBooks = (props) => {
         <div className="bookPrice">Rs.{props.info.price}</div>
         <div className="book-buttons">
             <div className= "left">
-                            <Button className="but-1" variant="contained"  onClick={() => { addToCart(props.info) }}   > 
+                            <Button className="but-1" variant="contained" 
+                             style={{width:add?'16.5rem':'7.3rem', marginLeft:add?'8.1rem':'',backgroundColor:add?'rgb(67, 117, 255)':'#A03037',height:add?'2.6rem':''}}
+                             color={add?'primary':''}
+                              onClick={() => { addToCart(props.info) }}   > 
                                 Add To Bag
                             </Button>
                             </div>
                             <div className="right">
-                            <Button className="but-2" variant="contained" >
+                            <Button className="but-2"  
+                             style={{width:wish?'15.6vw':'7.3rem', marginLeft:wish?'-8.1rem':'',height:wish?'2.6rem':'',backgroundColor:wish?'rgb(67, 117, 255)':'rgb(255, 255, 255)', color:wish?'white':''}} 
+                             onClick={Wishlist} variant="contained" >
                                 Wishlist
                             </Button>
                             </div>
