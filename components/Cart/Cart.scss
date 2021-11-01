@@ -41,7 +41,7 @@ $border: 1px solid #d9cccc;
     border: $border;
     padding: 20px;
     margin-top: 20px;
-    margin-left: -19rem ;
+    margin-left: -14.1rem ;
 }
 
 
@@ -151,7 +151,7 @@ rem
     border: $border;
     padding: 23px;
     margin-bottom: 200px;
-    margin-left: 13.2rem;
+    margin-left: 13rem;
 }
 .address-frame-details {
     @include flex(flex, space-evenly, column, 54.5%, 552px, null);

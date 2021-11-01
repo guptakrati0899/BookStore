@@ -76,12 +76,56 @@ $border: 1px solid lightgray;
 
 }
 
-@media only screen and (min-width: 630px) and (max-width:750px) {
-    .delelte_content {
-        margin-right: -18rem;
+@media screen and (min-width: 360px) and (max-width: 630px){
+    .wish_content{
+        border:none;
     }
+    .wish_content{
+        margin-top: -18px;
+ 
+         margin-left: -6rem;
+    }
+    .wishlist_heading{
+        border:none;
+        background-color: white;
+    }
+    .main-cart{
+        border-bottom: none;
+    }
+    .del_icon{
+        margin-right: 0rem;
+    }
+
 }
 
-@media screen and (min-width: 360px) and (max-width: 630px){
+@media screen and (min-width: 768px) and (max-width: 1024px){
+    .del_icon{
+        margin-right: -10rem;
+    }
+   
+    
+}
+
+@media screen and (max-width: 340px){
+
+    .wish_content{
+        border:none;
+    }
+    .wish_content{
+        margin-top: -18px;
+ 
+         margin-left: -7rem;
+    }
+    .wishlist_heading{
+        border:none;
+        background-color: white;
+    }
+    .main-cart{
+        border-bottom: none;
+    }
+    .del_icon{
+        margin-right: 1.5rem;
+    }
+
 
 }
