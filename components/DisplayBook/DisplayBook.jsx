@@ -86,35 +86,7 @@ const DisplayBook = (props) => {
 
 
     
-  // const sort = () => {
-
-  //   if (e.target.value === "asec") {
-  //     let sortData = [...props.bookarr].sort(function (a, b) {
-  //       return a.price - b.price
-  //     });
-  //     setState.bookarr(sortData);
-  //   }
-  //   else if (e.target.value === "dsec") {
-  //     let sortData = [...props.bookarr].sort(function (a, b) {
-  //       return b.price - a.price
-  //     });
-  //     props.bookarr(sortData);
-  //   }
-  //   else if (e.target.value === "alp-asec") {
-  //     let sortData = [...props.bookarr].sort(function (a, b) {
-  //       if (a.bookName < b.bookName) { return -1; }
-  //       return 0;
-  //     });
-  //     props.bookarr(sortData);
-  //   }
-  //   else if (e.target.value === "alp-dsec") {
-  //     let sortData = [...props.bookarr].sort(function (a, b) {
-  //       if (a.bookName > b.bookName) { return 1; }
-  //       return 0;
-  //     });
-  //     props.bookarr(sortData);
-  //   }
-  // }
+  
 
 
   
@@ -127,30 +99,30 @@ const DisplayBook = (props) => {
 
 
 
-  const searchBooks = (e) => {
-    setSearchBook(e.target.value);
-    console.log(e.target.value);
-    let filterBooks = props.bookarr;
-    filterBooks = props.bookarr.filter((val) => {
+//   const searchBooks = (e) => {
+//     setSearchBook(e.target.value);
+//     console.log(e.target.value);
+//     let filterBooks = props.bookarr;
+//     filterBooks = props.bookarr.filter((val) => {
    
-      console.log("value---------->",val);
-       return val.author.toLowerCase().includes(e.target.value)
-              ||val.bookName.toLowerCase().includes(e.target.value)
-              ||val.description.toUpperCase().includes(e.target.value)
-              ||val.author.toUpperCase().includes(e.target.value)
-              ||val.bookName.toUpperCase().includes(e.target.value)
-              ||val.author.includes(e.target.value)
-              ||val.bookName.includes(e.target.value)
-        })
-    if (e.target.value === ""){
-      setSearchData(filterBooks);
-      console.log(setSearchData(filterBooks))
-  }
-  else{
-    setSearchData(props.bookarr)
-    console.log("search data", setSearchData(filterBooks))
-  }
-}
+//       console.log("value---------->",val);
+//        return val.author.toLowerCase().includes(e.target.value)
+//               ||val.bookName.toLowerCase().includes(e.target.value)
+//               ||val.description.toUpperCase().includes(e.target.value)
+//               ||val.author.toUpperCase().includes(e.target.value)
+//               ||val.bookName.toUpperCase().includes(e.target.value)
+//               ||val.author.includes(e.target.value)
+//               ||val.bookName.includes(e.target.value)
+//         })
+//     if (e.target.value === ""){
+//       setSearchData(filterBooks);
+//       console.log(setSearchData(filterBooks))
+//   }
+//   else{
+//     setSearchData(props.bookarr)
+//     console.log("search data", setSearchData(filterBooks))
+//   }
+// }
 
 
 

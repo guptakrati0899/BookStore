@@ -49,9 +49,7 @@ $border: 1px solid #d9cccc;
     font-weight: 600;
     margin-left:2rem;
 }
-.main-cart {
-    display: flex;
-}
+
 .bag-text {
     @include flex(flex, null, column, 300px, 161px, null);
 }

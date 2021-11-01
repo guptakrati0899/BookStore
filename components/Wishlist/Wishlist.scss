@@ -6,99 +6,68 @@
     height: $height;
     width: $width;
 }
-$border: 1px solid lightgray!important;
-.CartBag-frame1 {
+
+$border: 1px solid lightgray;
+
+.wish_frame {
     @include flex(flex, center, column, null, 100%, 100px);
     align-items: center;
 }
-
-.title1 {
-    width: 81%;
-    font-weight: 500;
-    margin-left:4rem;
-}
-
-.cartBag-content1 {
-    width: 78%;
-    min-height: 223px;
-    border: 1px solid #d9cccc;
+.wish_content {
+    width: 70%;
+    min-height: 200px;
+    border: $border;
     margin-top: 20px;
-    margin-bottom: 298px;
+    margin-bottom: 196px;
+    margin-left:-3rem;
 }
-.heading-wishlist {
+.wishlist_heading {
     @include flex(flex, center, column, null, 58px, null);
-    padding-left: 38px;
-    border: $border;
-}
-.main-cart1{
-    border: $border;
-    display: flex;
-    height: 200px;
-}
-.text-content1 {
-    width: 180px;
-    width: 86%;
-    display: flex;
-    height: 150px;
-    justify-content: space-between;
-}
-.bag-text1 {
-    @include flex(flex, space-evenly, column, 687px, 161px, null);
-}
-.cart-title1 {
+    padding-left: 30px;
     font-weight: 600;
-    font-size: 20px;
+    border: $border;
+    background-color: #f5f5f5;
 }
-.cart-bookAuthor1 {
-    font-size: 15px;
-    height: 12px;
-    color: #a49595;
-    font-weight: 600;
-}
-.price1 {
-    font-weight: bold;
-}
-.delelte-content {
+.delelte_content {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-.btn-content1 {
-    display: flex;
+    flex-direction: row;
     justify-content: flex-end;
-    margin-top: 37px;
-    height: 48px;
-    width: 107px;
-    padding: 12px;
+    margin-top: -3rem;
+    margin-right: -38rem;
 }
-.btn-place1 {
+.del_icon {
+    cursor: pointer;
+    color: grey;
+}
+.btn_place4 {
     background-color: #3371b5 !important;
     color: white !important;
-    font-size: 8px;
-    
+    margin-left: 2.3rem !important;
+    margin-top: 2.5rem !important;
+    font-size: 0.6rem !important;
 }
-.btn-move{
-    font-size: 7px;
-    font-weight: bolder;
+.btn_content4{
+    margin-left: -2.3rem ;
+    margin-top: -2rem;
+    margin-bottom:1rem;
 }
 
-@media only screen and (min-width: 360px) {
-   
-    .Delete-add-Button{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+.main-cart{
+    display: flex;
+    border-bottom:1px solid lightgray;
+}
+.wish-con{
+    display: flex;
+    margin-left: 2rem;
+
+}
+
+@media only screen and (min-width: 630px) and (max-width:750px) {
+    .delelte_content {
+        margin-right: -18rem;
     }
-    .btn-content1{
-        margin-top: 8px;
-    height: 26px;
-    width: 67px;
-    }
-    .cartBag-content1 {
-        width: 94%;
-    }
-    .bag-text1{
-        width: 132px;
-    }
+}
+
+@media screen and (min-width: 360px) and (max-width: 630px){
+
 }
