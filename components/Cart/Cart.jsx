@@ -149,7 +149,7 @@ getCartItem = () => {
 
 
 OrderPlaced = () => {
-    let orderDetails = [];
+    let orderDetail = [];
     this.state.book.map((value) => {
         let arr = {
             "product_id": value.product_id._id,
@@ -157,11 +157,11 @@ OrderPlaced = () => {
             "product_quantity": value.quantityToBuy,
             "product_price": value.product_id.price
         };
-        orderDetails.push(arr);
+        orderDetail.push(arr);
     })
 
     let data = {
-        orders: orderDetails,
+        orders: orderDetail,
     };
     console.log("DATA ORDER SUCCES", data);
     
@@ -172,7 +172,21 @@ OrderPlaced = () => {
     }).catch((error) => {
         console.log(error);
     })
+    this.state.book.map((value) => {
+        this.removeCart(value._id);
+    })
 
+}
+
+
+
+removeCart = (id) => {
+    console.log(typeof(id),"cart");
+    obj.removeCartItem(id).then((response) => {
+        console.log(response);
+    }).catch((error) => {
+        console.log(error);
+    })
 }
 
 
