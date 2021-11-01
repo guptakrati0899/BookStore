@@ -58,5 +58,23 @@ class UserService {
      
 
 }
+
+
+addToWishList(id){
+    let response = obj.postMethod(`${baseurl}add_wish_list/${id}`, {}, headerconfig);
+    return response;
+}
+
+getWishlist(){
+    let response = obj.getMethod(`${baseurl}get_wishlist_items`, headerconfig);
+    return response;
+
+}
+
+deleteWishlistItem(id){
+    let response = obj.deleteMethod(`${baseurl}remove_wishlist_item/${id}`, headerconfig);
+    return response;
+    
+}
 }
 export default UserService
