@@ -10,6 +10,10 @@ class axiosService {
     putMethod(url,data,header=false){
         return axios.put(url,data,header);
     }
+    deleteMethod(url,header=false){
+        return axios.delete(url, header);
+
+    }
 }
 
 export default axiosService;

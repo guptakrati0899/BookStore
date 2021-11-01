@@ -50,7 +50,13 @@ class UserService {
         return response;
     
     }
-   
-}
 
+    
+    removeCartItem(id){
+        let response = obj.deleteMethod(`${baseurl}remove_cart_item/${id}`, headerconfig);
+        return response;
+     
+
+}
+}
 export default UserService
