@@ -70,7 +70,7 @@ const ShowBooks = (props) => {
         <div className="book-buttons">
             <div className= "left">
                             <Button className="but-1" variant="contained" 
-                             style={{width:add?'16.5rem':'7.3rem', marginLeft:add?'8.1rem':'',backgroundColor:add?'rgb(74, 170, 248)':'#A03037',height:add?'2.6rem':''}}
+                             style={{width:add?'14.5rem':'7.3rem', marginLeft:add?'7.8rem':'',backgroundColor:add?'rgb(74, 170, 248)':'#A03037',height:add?'2.6rem':''}}
                              color={add?'primary':''}
                               onClick={() => { addToCart(props.info) }}   > 
                                 Add To Bag
@@ -78,7 +78,7 @@ const ShowBooks = (props) => {
                             </div>
                             <div className="right">
                             <Button className="but-2"  
-                             style={{width:wish?'15.6vw':'7.3rem', marginLeft:wish?'-8.1rem':'',height:wish?'2.6rem':'',backgroundColor:wish?'rgb(74, 170, 248)':'rgb(255, 255, 255)', color:wish?'white':''}} 
+                             style={{width:wish?'15.6vw':'6.8rem', marginLeft:wish?'-8.1rem':'',height:wish?'2.6rem':'',backgroundColor:wish?'rgb(74, 170, 248)':'rgb(255, 255, 255)', color:wish?'white':''}} 
                              onClick={() =>{addToWish(props.info)}} variant="contained" >
                                 Wishlist
                             </Button>
