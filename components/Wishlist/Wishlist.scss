@@ -30,14 +30,28 @@ $border: 1px solid lightgray;
 }
 .delelte_content {
     display: flex;
-    flex-direction: row;
+   
     justify-content: flex-end;
     margin-top: -3rem;
-    margin-right: -38rem;
+   
 }
+.delelte_content > .css-i4bv87-MuiSvgIcon-root{
+    color: grey !important;
+}
+
+    .del_icon >.css-i4bv87-MuiSvgIcon-root{
+
+        color: grey !important;
+
+
+    }
+
 .del_icon {
     cursor: pointer;
-    color: grey;
+    color: grey !important;
+    margin-top: -5rem;
+    margin-right: -42rem;
+    
 }
 .btn_place4 {
     background-color: #3371b5 !important;

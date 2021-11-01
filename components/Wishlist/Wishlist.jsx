@@ -5,7 +5,7 @@ import Footer from '../Footer/Footer';
 import Image from '../../Assets/bookimage.png';
 import UserService from '../../services/user_services';
 import Button from '@material-ui/core/Button';
-import DeleteForever from '@mui/icons-material/DeleteForever';
+import DeleteIcon from '@mui/icons-material/Delete';
 import { Link } from 'react-router-dom';
 
 const obj = new UserService();
@@ -17,6 +17,7 @@ export default class WishList extends Component {
         super(props);
         this.state = {
             wishes: [],
+            book:[],
         
            
         }
@@ -25,6 +26,7 @@ export default class WishList extends Component {
 
     componentDidMount() {
         this.getWishlistItem();
+        this. getCartItem();
  
     }
 
@@ -38,22 +40,18 @@ export default class WishList extends Component {
 
     }
     
-    getCartItems = () => {
+    getCartItem = () => {
         obj.getCartItem().then((response) => {
             console.log(response.data.result);
-            this.setState({ books: response.data.result });
+            this.setState({ book: response.data.result });
         }).catch(error => {
             console.log(error);
         })
-
     }
 
     moveToCart = (value) => {
-        let wish = {
-            isCart: true
-        }
         console.log(value)
-        obj.addToCart(value, wish).then((response) => {
+        obj.addToCart(value).then((response) => {
             console.log(response);
             this.getCartItems();
             this.deleteWish(value);
@@ -67,7 +65,7 @@ export default class WishList extends Component {
 
     deleteWish(id) {
         console.log(typeof(id));
-        obj.removeWishItem(id).then((response) => {
+        obj.deleteWishlistItem(id).then((response) => {
             console.log(response);
             this.getWishlistItem();
         }).catch(error => {
@@ -98,7 +96,7 @@ export default class WishList extends Component {
                                     className="del_icon"
                                     onClick={() => this.deleteWish(value.product_id._id)}
                                 >
-                                    <DeleteForever />
+                                    <DeleteIcon />
                                 </div>
                             </div>
                             <div className="btn_content4">
@@ -117,7 +115,7 @@ export default class WishList extends Component {
 
         return (
             <div>
-                <Header val={this.state.wishes.length} />
+                <Header value={this.state.book.length} />
                 <div className="wish_frame">
                     <div className="wish_content">
                         <div className="wishlist_heading">My Wishlist({this.state.wishes.length}) </div>
