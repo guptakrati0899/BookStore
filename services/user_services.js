@@ -1,7 +1,7 @@
 import axiosService from '../services/axios_service';
 
 const obj = new axiosService();
-const baseurl = "https://new-bookstore-backend.herokuapp.com/bookstore_user/"
+const baseurl = "https://bookstore.incubation.bridgelabz.com/bookstore_user/"
 const token = localStorage.getItem("token");
 const headerconfig = {
     headers: {
@@ -23,10 +23,7 @@ class UserService {
         return response;
 
     }
-    getCartItem(data){
-        let response = obj.getMethod(`${baseurl}get/get_cart_items`, headerconfig);
-        return response;
-    }
+   
 
     addToCart(id){
         let response = obj.postMethod(`${baseurl}add_cart_item/${id}`,{}, headerconfig);
@@ -76,5 +73,13 @@ deleteWishlistItem(id){
     
 }
 
+cartIncrementDecrement=(data,id)=>{
+    let response = obj.putMethod(`${baseurl}cart_item_quantity/${id}`,data, headerconfig);
+    return response;
+   
+        } 
+      
 }
+
+
 export default UserService
