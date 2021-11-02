@@ -135,6 +135,7 @@ change = (e) => {
 
 componentDidMount() {
     this.getCartItem();
+
 }
 
 getCartItem = () => {
@@ -178,12 +179,47 @@ OrderPlaced = () => {
 
 }
 
+increment = (productid, quantity) => {
+    let data = {
+        "quantityToBuy": quantity + 1
+    }
+    console.log(data);
+    console.log("Quantity",data.quantityToBuy);
+    obj.cartIncrementDecrement(data, productid).then((response) => {
+        this.getCartItem();
+        console.log(response);
+    }).catch((error) => {
+        console.log(error);
+    })
+}
+
+decrement = (productid, quantity) => {
+    let data = {
+        "quantityToBuy": quantity - 1
+    }
+    if(data.quantityToBuy >= 1){
+        obj.cartIncrementDecrement(data, productid).then((response) => {
+            console.log(response);
+            this.getCartItem();
+        }).catch((error) => {
+            console.log(error);
+        })
+    }
+    else{
+        console.log("Out of Stock!")
+    }
+   
+}
+
+
 
 
 removeCart = (id) => {
     console.log(typeof(id),"cart");
     obj.removeCartItem(id).then((response) => {
         console.log(response);
+        this.getCartItem();
+     
     }).catch((error) => {
         console.log(error);
     })
@@ -207,10 +243,10 @@ removeCart = (id) => {
                             <div className="price">Rs. {value.product_id.price}</div>
                         </div>
                         <div className="count-content">
-                            <div className="minus">-</div>
-                            <div className="count">1</div>
-                            <div className="plus">+</div>
-                            <div className="remove">Remove</div>
+                            <div className="minus"onClick={()=>this.decrement(value._id, value.quantityToBuy)}>-</div>
+                            <div className="count">{value.quantityToBuy}</div>
+                            <div className="plus"onClick={()=>this.increment(value._id, value.quantityToBuy)}>+</div>
+                            <div className="remove" onClick={() => this.removeCart(value._id)}>Remove</div>
                         </div>
                     </div>
                 </div>

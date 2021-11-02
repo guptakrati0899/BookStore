@@ -36,12 +36,12 @@ $border: 1px solid #d9cccc;
     width: 81%;
 }
 .cartBag-content {
-    width: 55%;
+    width: 54.5%;
     min-height: 24vh;
     border: $border;
     padding: 20px;
     margin-top: 20px;
-    margin-left: -14.1rem ;
+    margin-left: -15rem ;
 }
 
 
@@ -96,6 +96,7 @@ rem
         font-size: 22px;
         font-weight: 400;
         background-color: rgb(247, 244, 244);
+        cursor:pointer;
     }
     .count {
         width: 38px;
@@ -112,7 +113,8 @@ rem
         border-radius: 18px;
         font-size: 22px;
         font-weight: 400;
-        background-color: rgb(247, 244, 244);}
+        background-color: rgb(247, 244, 244);
+        cursor:pointer;}
     .remove {
         cursor: pointer;
         margin-left: 39px;
