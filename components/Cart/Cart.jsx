@@ -205,9 +205,7 @@ decrement = (productid, quantity) => {
             console.log(error);
         })
     }
-    else{
-        console.log("Out of Stock!")
-    }
+   
    
 }
 

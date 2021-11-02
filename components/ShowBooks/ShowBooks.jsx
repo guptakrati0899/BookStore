@@ -7,6 +7,7 @@ import CardContent from '@material-ui/core/CardContent';
 import bookimg from "../../Assets/bookimage.png"
 import Button from '@material-ui/core/Button';
 import UserService from "../../services/user_services";
+import { Link } from "react-router-dom";
 
 const obj = new UserService();
 
@@ -82,6 +83,7 @@ const ShowBooks = (props) => {
                              onClick={() =>{addToWish(props.info)}} variant="contained" >
                                 Wishlist
                             </Button>
+                            
                             </div>
 
                         </div>
