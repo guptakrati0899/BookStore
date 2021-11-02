@@ -59,6 +59,7 @@ export default class Login extends Component {
             obj.login(Data).then((response)=> {
                 console.log(response);
                 localStorage.setItem("token", response.data.result.accessToken);
+                localStorage.setItem("fullName", response.data.result.address.fullName);
                 this.setState({snackbaropen:true, snackbarmsg: "Login Successfull!"})
                     this.setState({
                         redirect : "/home"

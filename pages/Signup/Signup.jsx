@@ -65,7 +65,7 @@ class Signup extends Component {
         console.log(signupObj);
         obj.signup(signupObj).then((response)=> {
             console.log(response);
-            localStorage.setItem("token", response.data.id);
+            localStorage.setItem("fullName", response.data.result.address.fullName);
             this.setState({snackbaropen:true, snackbarmsg: "Registered Successfully!"})
         }).catch((error)=>{
             console.log(error);
