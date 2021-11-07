@@ -57,7 +57,7 @@ const searchBooks = (e) => {
                             <span className="profile_text">Krati</span>
                             <Popper className="pop" open={open} anchorEl={anchorEl} placement={'bottom-start'} transition>
                                 <div className="paper">
-                                    <div className="popContent name">Hello {localStorage.getItem('fullName')}</div>
+                                    <div className="popContent name">Hello Krati</div>
                                     <Link to="/WishList" style={{textDecoration:'none', color:'#000'}}>
                                         <div className="popContent">
                                             &#x2661; WishList
