@@ -1,0 +1,111 @@
+.displaybook-mainContainer{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 40px;
+    justify-content: center;
+    align-items: center;
+    margin-top:-2rem;
+    margin-left:5rem;
+    width:85vw;
+}
+
+
+
+.menudiv {
+   margin-left: 73rem;
+   margin-top:-4rem;
+
+  }
+  .css-1e6y48t-MuiButtonBase-root-MuiButton-root {
+    color: black !important;
+    border: lightgrey solid 1px !important;
+    font-size: 13px !important;
+  }
+  .menudiv > .css-i4bv87-MuiSvgIcon-root{
+      color: black !important;
+  }
+
+
+
+
+  .displaybook-header2{
+    display: flex;
+    margin-top: 5rem;
+margin-left: 13rem;
+}
+
+.displaybook-header2 >p {
+    margin-top: 1.6rem;
+    margin-left:0.6rem;
+    font-weight: 600;
+    color: lightgray;
+}
+
+
+.css-wjh20t-MuiPagination-ul{
+    display: flex;
+    justify-content: center;
+    margin-top: -2rem;
+   
+}
+
+.css-1p5q5e5-MuiStack-root{
+    margin-bottom: 2rem;
+}
+.pagination {
+    margin-bottom: 5rem;
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1024px){
+
+    .displaybook-header2{
+        margin-left: 6rem;
+    }
+    .menudiv{
+        margin-left: 30rem;
+        margin-top: -4rem;
+        }
+
+    .displaybook-mainContainer{
+        margin-left: 1.2rem;
+    }
+}
+
+
+@media screen and (min-width: 360px) and (max-width: 630px){
+    .displaybook-header2{
+        margin-left: 2.5rem;
+    }
+
+    .menudiv{
+        display:none;
+    }
+    
+    .displaybook-mainContainer{
+        margin-left: -1.5rem;
+    }
+
+}
+
+
+@media screen and (max-width: 340px){
+
+    .displaybook-header2{
+        margin-left: 2.5rem;
+    }
+
+    .menudiv{
+        display:none;
+    }
+    
+    .displaybook-mainContainer{
+        margin-left: -1.5rem;
+    }
+
+    .css-wjh20t-MuiPagination-ul{
+        margin-left:-1.5rem;
+    }
+
+
+}

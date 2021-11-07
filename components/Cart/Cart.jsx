@@ -11,6 +11,9 @@ import FormControl from '@mui/material/FormControl';
 import Image from "../../Assets/bookimage.png"
 import { Link } from 'react-router-dom';
 import UserService from '../../services/user_services';
+import { Book } from '../../App';
+
+
 
 
 const obj = new UserService();
@@ -226,9 +229,13 @@ removeCart = (id) => {
 
     
     render() {
+        
 
-
+        
+       
+     
         const cartDetails = this.state.book.map((value, index) => {
+          
             return (
                 <div className="main_cart">
                      <div className="img-content">
@@ -248,8 +255,11 @@ removeCart = (id) => {
                         </div>
                     </div>
                 </div>
-            )
+            )  
+      
         });    
+    
+      
 
 
         const orderDetails = this.state.book.map((value, index) => {
@@ -268,10 +278,11 @@ removeCart = (id) => {
                 </div>
             )
         }); 
+      
 
         return (
             <div>
-                <Header value={this.state.book.length} getCard={this.getCartItem}/>
+                <Header val={this.state.book.length} getCard={this.getCartItem}/>
                 <div className="CartBag-frame">
                     <div className="cartBag-content">
                         <div >My Cart ({this.state.book.length})</div>

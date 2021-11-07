@@ -50,3 +50,6 @@ class OrderPlaced extends Component {
 };
 
 export default OrderPlaced;
+
+
+

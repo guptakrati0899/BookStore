@@ -1,4 +1,4 @@
-
+import React from 'react';
 import './App.css';
 import Dashboard from "../src/pages/Dashboard/Dashboard"
 import{BrowserRouter as Router , Switch,Route,Redirect} from 'react-router-dom';
@@ -7,9 +7,19 @@ import Cart from './components/Cart/Cart';
 import OrderPlaced from './components/OrderPlaced/OrderPlaced';
 import WishList from './components/Wishlist/Wishlist';
 
+
+
+
+
+
+
 function App() {
+
+  
+
   return (
     <div className="App">
+  
      <Router>
       < Switch>
         < Route exact path ="/">

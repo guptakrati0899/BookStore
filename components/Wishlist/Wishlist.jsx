@@ -26,13 +26,13 @@ export default class WishList extends Component {
 
     componentDidMount() {
         this.getWishlistItem();
-        this. getCartItem();
+        this.getCartItem();
  
     }
 
     getWishlistItem = () => {
         obj.getWishlist().then((response) => {
-            console.log("whish list data -----", response.data.result);
+            console.log("wish list data -----", response.data.result);
             this.setState({ wishes: response.data.result });
         }).catch(error => {
             console.log("error", error);
@@ -53,7 +53,7 @@ export default class WishList extends Component {
         console.log(value)
         obj.addToCart(value).then((response) => {
             console.log(response);
-            this.getCartItems();
+            this.getCartItem();
             this.deleteWish(value);
         }).catch(error => {
             console.log(error);
@@ -92,13 +92,8 @@ export default class WishList extends Component {
                     
                         <div className="delete_Button">
                             <div className="delelte_content">
-                                <div
-                                    className="del_icon"
-                                    onClick={() => this.deleteWish(value.product_id._id)}
-                                >
-                                    <DeleteIcon />
-                                </div>
-                            </div>
+                                
+                            
                             <div className="btn_content4">
                                 <Link to="/Cart" style={{ textDecoration: 'none' }}>
                                     <Button variant="contained" className="btn_place4" onClick={() => this.moveToCart(value.product_id._id)} >
@@ -106,6 +101,13 @@ export default class WishList extends Component {
                                     </Button>
                                 </Link>
                             </div>
+                            <div
+                                    className="del_icon"
+                                    onClick={() => this.deleteWish(value.product_id._id)}
+                                >
+                                    <DeleteIcon />
+                                </div>
+                                </div>
                             </div>
                         </div>
                     </div>

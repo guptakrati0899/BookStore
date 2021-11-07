@@ -28,7 +28,7 @@ const handleProfile = (event) => {
 
 
 const searchBooks = (e) => {
-    this.props.search(e)
+    props.search(e)
 }
 
 
@@ -54,7 +54,7 @@ const searchBooks = (e) => {
                         <div className="side-header">
                         <div className="profile">
                             <div className="profile_icon"> <PersonOutlineIcon onClick={handleProfile} /></div>
-                            <span className="profile_text">Profile</span>
+                            <span className="profile_text">Krati</span>
                             <Popper className="pop" open={open} anchorEl={anchorEl} placement={'bottom-start'} transition>
                                 <div className="paper">
                                     <div className="popContent name">Hello {localStorage.getItem('fullName')}</div>
@@ -76,7 +76,7 @@ const searchBooks = (e) => {
                             
                             <div className="cart_main">
                                
-                                <Badge badgeContent={props.value} 
+                                <Badge badgeContent={props.val} 
                                     color="primary"
                                     anchorOrigin={{
                                         vertical: 'top',

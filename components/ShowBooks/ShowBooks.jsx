@@ -12,15 +12,11 @@ import { Link } from "react-router-dom";
 const obj = new UserService();
 
 const ShowBooks = (props) => {
-  
-  const [newBook, setNewBook] = useState(false);
+
   const [add,setadd] = useState(false);
   const [wish,setwish] = useState(false);
 
-  const newNote2 = () => {
-    setNewBook(!newBook);
-  };
-
+  
 
   
   const addToCart = (info) => {
@@ -46,6 +42,7 @@ const ShowBooks = (props) => {
    
     obj.addToWishList(info._id).then((response) => {
         console.log(response);
+        props.getCard();
     }).catch(error => {
         console.log(error);
     })
