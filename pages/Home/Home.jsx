@@ -43,6 +43,7 @@ export default function Home(props) {
         obj.getAllbooks()
         .then((response) => {
             console.log(response)
+           
                 setBooks(response.data.result );
     })
         .catch((error) => {
@@ -92,20 +93,14 @@ export default function Home(props) {
     }
 
     const searchBooks = (e) => {
-        setSearchBook(e.target.info);
-        console.log(e.target.info);
-        let filterBooks = bookarr;
-        filterBooks = bookarr.filter((val) => {
+        setSearchBook(e.target.value);
+        console.log(e.target.value);
+        let filterBooks = bookarr.filter((val) => {
             console.log(val);
-            return val.author.toLowerCase().includes(e.target.info)
-                          ||val.bookName.toLowerCase().includes(e.target.info)
-                          ||val.description.toUpperCase().includes(e.target.info)
-                          ||val.author.toUpperCase().includes(e.target.info)
-                          ||val.bookName.toUpperCase().includes(e.target.info)
-                          ||val.author.includes(e.target.info)
-                          ||val.bookName.includes(e.target.info)
+            return val.author.includes(e.target.value)
+                || val.bookName.includes(e.target.value)
         })
-        if (e.target.info === "") {
+        if (e.target.value === "") {
             setSearchData(filterBooks);
             console.log(setSearchData(filterBooks))
         }
