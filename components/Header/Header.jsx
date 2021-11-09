@@ -10,12 +10,17 @@ import Badge from '@mui/material/Badge';
 import { Link } from 'react-router-dom';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import Popper from '@material-ui/core/Popper';
+import BookContext from '../Context/Context';
+
+
+
 
 
 
 
 
 function Header(props) {
+    const { cartCount } = React.useContext(BookContext);
 
 
 const [anchorEl, setAnchorEl] = React.useState(null);
@@ -76,7 +81,7 @@ const searchBooks = (e) => {
                             
                             <div className="cart_main">
                                
-                                <Badge badgeContent={props.val} 
+                                <Badge badgeContent={cartCount} 
                                     color="primary"
                                     anchorOrigin={{
                                         vertical: 'top',

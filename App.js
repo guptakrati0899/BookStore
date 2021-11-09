@@ -6,6 +6,12 @@ import Home from './pages/Home/Home';
 import Cart from './components/Cart/Cart';
 import OrderPlaced from './components/OrderPlaced/OrderPlaced';
 import WishList from './components/Wishlist/Wishlist';
+import UserService from '../src/services/user_services';
+import BookContext from './components/Context/Context';
+
+
+const obj = new UserService();
+
 
 
 
@@ -15,10 +21,30 @@ import WishList from './components/Wishlist/Wishlist';
 
 function App() {
 
+  const [cartCount, setCount] = React.useState();
+  const [cartBooks, setCartBooks] = React.useState();
+
+  const getCartItem = () => {
+    obj
+      .getCartItem()
+      .then((response) => {
+        setCount(response.data.result.length);
+        setCartBooks(response.data.result);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  React.useEffect(() => {
+    getCartItem();
+  }, [cartCount]);
+
   
 
   return (
     <div className="App">
+          <BookContext.Provider value={{ cartCount, getCartItem, cartBooks }}>
   
      <Router>
       < Switch>
@@ -32,6 +58,7 @@ function App() {
         <Route path = "/WishList" component={WishList}/>
       </Switch>
     </Router> 
+    </BookContext.Provider>
 
     {/* <Cart/> */}
 

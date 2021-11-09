@@ -11,12 +11,13 @@ import FormControl from '@mui/material/FormControl';
 import Image from "../../Assets/bookimage.png"
 import { Link } from 'react-router-dom';
 import UserService from '../../services/user_services';
-import { Book } from '../../App';
+import BookContext from '../Context/Context';
 
 
 
 
 const obj = new UserService();
+
 
 
 
@@ -27,6 +28,7 @@ const styles = (theme) => ({
         color: 'black',
       },
 });
+
 
 
 
@@ -63,6 +65,7 @@ export class Cart extends Component {
         }
     }
 
+ 
 
       
     isValidated = () => {
@@ -234,7 +237,9 @@ removeCart = (id) => {
         
        
      
-        const cartDetails = this.state.book.map((value, index) => {
+        const cartDetails = this.state.book.map(
+
+            (value, index) => {
           
             return (
                 <div className="main_cart">
@@ -257,7 +262,8 @@ removeCart = (id) => {
                 </div>
             )  
       
-        });    
+        })   ;
+        
     
       
 
@@ -282,7 +288,7 @@ removeCart = (id) => {
 
         return (
             <div>
-                <Header val={this.state.book.length} getCard={this.getCartItem}/>
+                <Header  getCard={this.getCartItem}/>
                 <div className="CartBag-frame">
                     <div className="cartBag-content">
                         <div >My Cart ({this.state.book.length})</div>

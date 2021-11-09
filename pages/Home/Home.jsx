@@ -35,7 +35,7 @@ export default function Home(props) {
 
     useEffect(() => {
        displayBook();
-        getCartItem();
+        // getCartItem();
     },[],search);
 
 
@@ -51,14 +51,14 @@ export default function Home(props) {
         });
     }
   
-    const getCartItem = () => {
-        obj.getCartItem().then((response) => {
-            console.log(response.data.result);
-            setCart(response.data.result);
-        }).catch(error => {
-            console.log(error);
-        })
-    }
+    // const getCartItem = () => {
+    //     obj.getCartItem().then((response) => {
+    //         console.log(response.data.result);
+    //         setCart(response.data.result);
+    //     }).catch(error => {
+    //         console.log(error);
+    //     })
+    // }
 
     const asec = () => {
    
@@ -110,33 +110,11 @@ export default function Home(props) {
         }
     }
     
-//   const searchBooks = (e) => {
-//     setSearchBook(e.target.value);
-//     console.log(e.target.value);
-//     let filterBooks = props.bookarr;
-//     filterBooks = props.bookarr.filter((val) => {
-   
-//       console.log("value---------->",val);
-//        return val.author.toLowerCase().includes(e.target.value)
-//               ||val.bookName.toLowerCase().includes(e.target.value)
-//               ||val.description.toUpperCase().includes(e.target.value)
-//               ||val.author.toUpperCase().includes(e.target.value)
-//               ||val.bookName.toUpperCase().includes(e.target.value)
-//               ||val.author.includes(e.target.value)
-//               ||val.bookName.includes(e.target.value)
-//         })
-//     if (e.target.value === ""){
-//       setSearchData(filterBooks);
-//       console.log(setSearchData(filterBooks))
-//   }
-//   else{
-//     setSearchData(props.bookarr)
-//     console.log("search data", setSearchData(filterBooks))
-//   }
-// }
+
 
     const booksDetails = (book) => {
-        return (<ShowBooks info={book} get={displayBook} getCard={getCartItem} />)
+        return (<ShowBooks info={book} get={displayBook}  />)
+        
     }
 
     const LBook = currentPage * perPage;
@@ -145,7 +123,7 @@ export default function Home(props) {
 
     return (
         <>
-            <Header book={bookarr} val={cart.length} search={searchBooks} />
+            <Header book={bookarr} search={searchBooks} />
                 <div>
                 <div className="displaybook-header2">
             <h2 className="header-text-displayBook">Books</h2>
